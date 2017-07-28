@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="darkColor">#343041</color>
+    <color name="topaz">#7A768A</color>
+    <color name="coldPurple">#9B92B2</color>
+    <color name="eastSide">#AA83C2</color>
+    <color name="froly">#EA626A</color>
+    <color name="rose">#F6F2F1</color>
+    -->
+</resources>

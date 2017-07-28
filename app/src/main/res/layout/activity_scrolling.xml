@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#fff"
+    tools:context="com.example.mohang.myapplication.ScrollingActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="94dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <ImageView
+                android:scaleType="fitXY"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--android:src="@drawable/background_poem"-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+
+        app:behavior_overlapTop="78dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="4dp"
+
+            android:visibility="visible"
+            android:id="@+id/cardview"
+            android:layout_margin="@dimen/dimen_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/kavana" />
+        </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:background="#fff"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/shot_actions"
+            android:layout_columnSpan="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/shot_like_count"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_heart_full_24dp_grey"
+                android:text="33 likes"
+                 />
+
+            <TextView
+                android:id="@+id/shot_view_count"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_views"
+                android:text="33 views"
+               />
+
+            <TextView
+                android:background="?android:attr/selectableItemBackground"
+                android:id="@+id/shot_share_action"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_share_avd"
+                android:text="Share"
+                />
+
+        </LinearLayout>
+
+            <include layout="@layout/cards_list"/>
+            <include layout="@layout/cards_list"/>
+            <include layout="@layout/cards_list"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+  <!--  <com.example.mohang.myapplication.FABToggle
+        android:id="@+id/fab_heart"
+        app:layout_anchor="@id/cardview"
+        app:layout_anchorGravity="top|right|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fab_dribbble_fav"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_heart_empty_56dp" />-->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="60dp"
+        android:layout_marginRight="32dp"
+        android:layout_height="60dp"
+        app:layout_anchor="@id/cardview"
+        app:layout_anchorGravity="top|right|end"
+        android:src="@drawable/ic_heart_empty_56dp" />
+
+</android.support.design.widget.CoordinatorLayout>
